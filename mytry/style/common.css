@@ -1,0 +1,40 @@
+@media only screen and (min-width: 480px){
+	body{
+		width:480px;
+		margin:0 auto;
+	}
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing:border-box;
+	text-decoration: none;
+	list-style-type: none;
+}
+
+body{
+	font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; 
+	color:#999;  
+	background-color:#f0f0f0;
+}
+
+.blue-back{
+	background-color: #3194d5;
+}
+.blue-color{
+	color: #3194d5;
+}
+.orange-back{
+	background-color: #ff6537;
+}
+.orange-color{
+	color: #ff6537;
+}
+.white-back{
+	background-color: #b3b3b3;
+}
+.gray{
+	color: #ccc;
+}

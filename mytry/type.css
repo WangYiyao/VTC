@@ -1,0 +1,10 @@
+.logo{
+	display: inline-block;
+	padding: 5.8%;
+	background: url("img/logo.png") no-repeat scroll center center / 100% auto;
+	margin-right: 2.5%;
+	vertical-align: middle;
+}
+.logo-text{
+	font-size: 20px;
+}
