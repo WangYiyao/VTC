@@ -18,6 +18,7 @@ body{
 	font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; 
 	color:#999;  
 	background-color:#f0f0f0;
+	height:100%;
 }
 
 .blue-back{
@@ -32,9 +33,30 @@ body{
 .orange-color{
 	color: #ff6537;
 }
-.white-back{
-	background-color: #b3b3b3;
+.black-color{
+	color: #555;
 }
 .gray{
 	color: #ccc;
+}
+.icon{
+	display: inline-block;
+	padding: 3.8%;
+	margin-right: 2.8%;
+	vertical-align: middle;
+}
+.button-a{
+	display: inline-block;
+	float: right;
+	padding: 1% 2%;
+	vertical-align: middle;
+	border: 1px solid #3194d5;
+	border-radius: 3px;
+}
+.button-a:hover{
+	background: #3194d5;
+	color: white;
+}
+.settings-show{
+	float: right;
 }
