@@ -14,12 +14,20 @@
 	color: #888;
 	/*font-size: 16px;*/
 }
+<<<<<<< HEAD
 @media screen and (max-width:340px){
+=======
+@media only screen and (max-width:340px){
+>>>>>>> d5bcebba5362093af31d496df23df6c7a5fa3395
 	*{
 		font-size:15px;
 	}
 }
+<<<<<<< HEAD
 @media screen and (min-width: 410px){
+=======
+@media only screen and (min-width: 410px){
+>>>>>>> d5bcebba5362093af31d496df23df6c7a5fa3395
 	*{
 		font-size: 16px;
 	}
@@ -32,7 +40,11 @@
 		font-size: 16px;
 	}
 	.vote-title, .vote-title span{
+<<<<<<< HEAD
 		font-size: 18px;
+=======
+		font-size: 16px;
+>>>>>>> d5bcebba5362093af31d496df23df6c7a5fa3395
 	}
 }
 .banner-div img{
@@ -142,6 +154,7 @@
 .vote-done{
 	background-color: #d3d3d3;
 	padding: 2px 6%;
+<<<<<<< HEAD
 }
 .bt-show{
 	margin-top: 5%;
@@ -153,4 +166,6 @@
 .bt-show li{
 	padding-bottom: 3%;
 	/*list-style-type: decimal;*/
+=======
+>>>>>>> d5bcebba5362093af31d496df23df6c7a5fa3395
 }

@@ -38,6 +38,7 @@
 
 .button-log{
 	padding: 2% 4%;
+	margin-top: 1.5%;
 }
 
 .config-ctrl{
@@ -46,6 +47,10 @@
 .hd-settings{
 	padding-bottom: 2%;
 	padding-top: 2%;
+}
+
+.epuip-num{
+	margin-top: 1.7%;
 }
 .bd-settings p{
 	padding: 4.6% 0 4.6% 10.8%;
@@ -121,6 +126,7 @@
  	<div class="equip-ctrl">
  		<i class="icon camera-icon"></i>
  		<span class="black-color">设备号</span>
+ 		<span class="settings-show gray epuip-num">9</span>
  	</div>
  	<div class="config-ctrl">
  		<div class="settings">

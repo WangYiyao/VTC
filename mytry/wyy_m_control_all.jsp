@@ -8,9 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<meta name="format-detection" content="telephone=no" />
-	<link rel="stylesheet" type="text/css" href="style/common.css">
+	<link rel="stylesheet" type="text/css" href="style/wyy_common.css">
 	<!-- <link rel="stylesheet" href="layout.css" type="text/css" /> -->
-	<!-- <link rel="stylesheet" href="type.css" type="text/css" /> -->
+	<link rel="stylesheet" href="type.css" type="text/css" />
 	
 	<!-- <script src="js/jquery-1.6.2.min.js?version=9" type="text/javascript"></script> -->
 	<!-- <script src="js/m_camerabox.js?version=8" type="text/javascript" charset="utf-8"></script> -->
@@ -38,6 +38,7 @@
 
 .button-log{
 	padding: 2% 4%;
+	margin-top: 1.5%;
 }
 
 .config-ctrl{
@@ -47,7 +48,12 @@
 	padding-bottom: 2%;
 	padding-top: 2%;
 }
-.bd-settings p{
+
+.epuip-num{
+	margin-top: 1.7%;
+}
+
+.bd-settings p,.equip-ctrl p{
 	padding: 4.6% 0 4.6% 10.8%;
 }
 .title-input{
@@ -119,8 +125,15 @@
  		<a href="???????" class="button-a button-log blue-color">管理员登陆</a>
  	</div>
  	<div class="equip-ctrl">
- 		<i class="icon camera-icon"></i>
- 		<span class="black-color">设备号</span>
+ 		<div>
+ 			<i class="icon camera-icon"></i>
+ 			<span class="black-color">所有设备</span>
+ 			<i class="module-spread"></i>
+ 			<span class="settings-show gray epuip-num">3个</span>
+ 		</div>
+ 		<div>
+ 			<p>1&nbsp;&nbsp;&nbsp;测试3-8<span class="switch-off"><span class="switch-ctrl-off"></span></span></p>
+ 		</div>
  	</div>
  	<div class="config-ctrl">
  		<div class="settings">
