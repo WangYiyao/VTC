@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="content-Type" content="text/html; charset=utf-8 "/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- <script type="text/javascript" src="jquery.cookie.jss"></script> -->
+	
+	<style type="text/css">
+		.ani{
+          width:900px;
+          height:470px;
+          margin:50px auto;
+          overflow: hidden;
+          box-shadow:0 0 5px rgba(0,0,0,1);
+          background-size: cover;
+          background-position: center;
+          -webkit-animation-name: loops;
+          -webkit-animation-duration: 20s;
+          -webkit-animation-iteration-count: infinite;
+          animation: loops 20s infinite;
+        }
+        @-webkit-keyframes loops {
+            0% {
+                background:url(images/flower1.jpg) no-repeat;             
+            }
+            25% {
+                background:url(images/flower2.jpg) no-repeat;
+            }
+            50% {
+                background:url(images/flower3.jpg) no-repeat;
+            }
+            75% {
+                background:url(images/flower4.jpg) no-repeat;
+            }
+            100% {
+                background:url(images/flower5.jpg) no-repeat;
+            }
+        }
+
+        @-moz-keyframes loops {
+            0% {
+                background:url("images/flower1.jpg") no-repeat;             
+            }
+            25% {
+                background:url("images/flower2.jpg") no-repeat;
+            }
+            50% {
+                background:url(images/flower3.jpg) no-repeat;
+            }
+            75% {
+                background:url(images/flower4.jpg) no-repeat;
+            }
+            100% {
+                background:url(images/flower5.jpg) no-repeat;
+            }
+        }
+	</style>
+</head>
+<body>
+
+<div class="test">
+	<div class="ani"></div>
+</div>
+
+<script>
+
+	
+	/*var memorizer = function(memo,fundation){
+		var shell = function(n){
+			var result = memo[n];
+			if(typeof result !== 'number'){
+				result = fundation(shell,n);
+				memo[n] = result;
+			}
+			return result;
+		};
+		return shell;
+	};
+
+	var fibonacci = memorizer([0,1],function(shell,n){
+		return shell(n-1)+shell(n-2);
+	});
+	var she = fibonacci();
+	console.log(she);*/
+
+	/*var foo="get-element-by-id";
+
+	function combo(msg){
+    var arr = msg.split("-");
+     var len = arr.length;
+     for(var i=1;i<len;i++){
+         arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substr(1,arr[i].length-1);
+     }
+     msg=arr.join("");
+     return msg;
+ }
+
+ var sdf = combo(foo);
+ console.log(sdf);*/
+
+
+</script>
+</body>
+</html>
