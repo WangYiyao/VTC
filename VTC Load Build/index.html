@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="content-Type" content="text/html; charset=utf-8 "/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<!-- <script type="text/javascript" src="jquery.js"></script> -->
+	<!-- <script type="text/javascript" src="bootstrap.min.js"></script> -->
+	<style type="text/css">
+		h1{
+			margin: 2% 0;
+		}
+		h1,h2,h3{
+			text-align: center;
+		}
+		.col-sm-2, .col-md-2, .col-lg-2,.col-sm-5, .col-md-5, .col-lg-5{
+			border: 1px solid #8C8A8A;
+			height: 100px;
+		}
+		span{
+			font-size: 20px;
+			padding-right: 10px;
+			margin-top: 10px;
+		}
+		select{
+			/*font-size: px;*/
+			margin-top: 10px;
+		}
+		.select-Build{
+			margin-right: 10%;
+		}
+		#oldAndroid, #oldServer{
+			display: inline-block;
+			width: 100%;
+			margin: 0 auto;
+			text-align: center;
+			font-size: 18px;
+			padding:5px;
+		}
+		.change-row{
+			height: 300px;
+		}
+		.change-row div{
+			height: 100%;
+		}
+		#changeAndroid, #changeServer{
+			width: 1000px;
+			background-color: #fff;
+			border: none;
+		}
+		.changeShow{
+			height: 300px;
+			overflow: scroll;
+			/*margin: 5px;*/
+
+		}
+	</style>
+</head>
+
+<body>
+    <div>
+    	<h1>VTC Load Build</h1>
+    	<hr/>
+    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-2 col-md-2 col-lg-2"></div>
+			<div class="col-sm-5 col-md-5 col-lg-5">
+				<h3>Android版本控制</h3>
+			</div>
+			<div class="col-sm-5 col-md-5 col-lg-5">
+				<h3>Server版本控制</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-md-2 col-lg-2">
+				<h3>上个版本</h3>
+			</div>
+			<div class="col-sm-5 col-md-5 col-lg-5">
+				<p id="oldAndroid"></p>
+			</div>
+			<div class="col-sm-5 col-md-5 col-lg-5">
+				<p id="oldServer"></p>
+			</div>
+		</div>
+		<div class="row change-row">
+			<div class="col-sm-2 col-md-2 col-lg-2">
+				<h3>最新更新</h3>
+			</div>
+			<div class="col-sm-5 col-md-5 col-lg-5 changeShow">
+				<pre id="changeAndroid"></pre>
+			</div>
+			<div class="col-sm-5 col-md-5 col-lg-5 changeShow">
+				<pre id="changeServer"></pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-md-2 col-lg-2"></div>
+			<div class="col-sm-5 col-md-5 col-lg-5">
+				<button>Build</button>
+				<select class="select-Build">
+					<option>版本号1</option>	
+					<option>版本号2</option>
+					<option>版本号3</option>
+				</select>
+
+				<button>上传</button>
+				<select>
+					<option>版本号1</option>	
+					<option>版本号2</option>
+					<option>版本号3</option>
+				</select>
+			</div>
+			<div class="col-sm-5 col-md-5 col-lg-5">
+				<button>Build</button>
+				<select class="select-Build">
+					<option>版本号1</option>	
+					<option>版本号2</option>
+					<option>版本号3</option>
+				</select>
+				
+				<button>上传</button>
+				<select>
+					<option>版本号1</option>
+					<option>版本号2</option>
+					<option>版本号3</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-md-2 col-lg-2"></div>
+			<div class="col-sm-5 col-md-5 col-lg-5"></div>
+			<div class="col-sm-5 col-md-5 col-lg-5"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function getOldInfo(){
+			console.log('进入函数');
+			$.ajax({
+			url:'cgi-bin/getLastAndroidLoad.sh',
+			type:'post',
+			dataType:'json',
+			async:true,
+			success:function(res){
+					//alert(res);
+					console.log(res);
+					// $("#userId").val(res.result);
+				}
+			});
+		}
+
+
+function getHTTPObject(){
+	if(typeof XMLHttpRequest == "undefined")
+		XMLHttpRequest = function(){
+			try{return new ActiveXObject("Msxml2.XMLHTTP.6.0");}
+			catch(e){}
+			try{return new ActiveXObject("Msxml2.XMLHTTP.3.0");}
+			catch(e){}
+			try{return new ActiveXObject("Msxml2.XMLHTTP");}
+			catch(e){}
+
+			return false;
+		}
+		return new XMLHttpRequest();
+}
+
+function getOldAndroid(){
+	var request = getHTTPObject();
+	if(request){
+		request.open("GET","cgi-bin/getLastAndroidLoad.sh",true);
+		request.onreadystatechange = function(){
+			if(request.readyState == 4){
+				//console.log("---"+request.responseText);
+				var txt = document.createTextNode(request.responseText);
+				var oldAn = document.getElementById('oldAndroid');
+				oldAn.appendChild(txt);
+			}
+		};
+		request.send(null);
+	}
+	else{
+		alert('( ¯▽¯；)返回上个安卓版本信息出错');
+	}
+}
+
+function getOldServer(){
+	var request = getHTTPObject();
+	if(request){
+		request.open("GET","cgi-bin/getLastServerLoad.sh",true);
+		request.onreadystatechange = function(){
+			if(request.readyState == 4){
+				//console.log("---"+request.responseText);
+				var txt = document.createTextNode(request.responseText);
+				var oldAn = document.getElementById('oldServer');
+				oldAn.appendChild(txt);
+			}
+		};
+		request.send(null);
+	}
+	else{
+		alert('( ¯▽¯；)返回上个服务器版本信息出错');
+	}
+}
+
+function getChangeAndroid(){
+	var request = getHTTPObject();
+	if(request){
+		request.open("GET","cgi-bin/getAndroidRecentChange.sh",true);
+		request.onreadystatechange = function(){
+			if(request.readyState == 4){
+				//console.log("---"+request.responseText);
+				var txt = document.createTextNode(request.responseText);
+				var oldAn = document.getElementById('changeAndroid');
+				oldAn.appendChild(txt);
+			}
+		};
+		request.send(null);
+	}
+	else{
+		alert('( ¯▽¯；)返回信息出错');
+	}
+}
+
+function getChangeServer(){
+	var request = getHTTPObject();
+	if(request){
+		request.open("GET","cgi-bin/getServerRecentChange.sh",true);
+		request.onreadystatechange = function(){
+			if(request.readyState == 4){
+				//console.log("---"+request.responseText);
+				var txt = document.createTextNode(request.responseText);
+				var oldAn = document.getElementById('changeServer');
+				oldAn.appendChild(txt);
+			}
+		};
+		request.send(null);
+	}
+	else{
+		alert('( ¯▽¯；)返回信息出错');
+	}
+}
+
+
+
+
+		(function init(){
+			getOldAndroid();
+			getOldServer();
+			getChangeAndroid();
+			getChangeServer();
+		})();
+
+	</script>
+</body>
+</html>
